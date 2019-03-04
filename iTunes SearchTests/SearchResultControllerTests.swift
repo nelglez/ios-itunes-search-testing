@@ -10,16 +10,27 @@ import XCTest
 @testable import iTunes_Search
 
 
-struct MockDataLoader: NetworkDataLoader {
+class MockDataLoader: NetworkDataLoader {
+    let data: Data?
+    let error: Error?
+    private(set) var request: URLRequest? = nil
+    
+    init(data: Data?, error: Error?){
+        self.data = data
+        self.error = error
+    }
+    
     func loadData(using request: URLRequest, completion: @escaping (Data?, Error?) -> Void) {
-        <#code#>
+        //provide data
+        self.request = request
+        completion(data, error)
     }
 }
 
 class SearchResultControllerTests: XCTestCase {
 
     func testValidData() {
-        let mock =
+        let mock = MockDataLoader.init(data: nil, error: nil)
     }
 
 }
