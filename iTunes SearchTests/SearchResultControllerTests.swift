@@ -37,9 +37,10 @@ class SearchResultControllerTests: XCTestCase {
             
             XCTAssertNotNil(mock.request)
             
-            let testComponents = URLComponents(url: URL(string: "https://itunes.apple.com/search?entity=software&term=Garageband")!, resolvingAgainstBaseURL: true)
-            let components = URLComponents(url: mock.request!.url!, resolvingAgainstBaseURL: true)
-            XCTAssertEqual(components, testComponents)
+            let testComponents = URLComponents(url: URL(string: "https://itunes.apple.com/search?entity=software&term=Garageband")!, resolvingAgainstBaseURL: true)!
+            let components = URLComponents(url: mock.request!.url!, resolvingAgainstBaseURL: true)!
+         //   XCTAssertEqual(components, testComponents)
+            XCTAssertTrue(urlComponents(components, equalTo: testComponents))
             
             XCTAssertEqual(searchResultsController.searchResults.count, 1)
             let firstObject = searchResultsController.searchResults.first!
@@ -47,4 +48,24 @@ class SearchResultControllerTests: XCTestCase {
         }
     }
 
+}
+
+func urlComponents(_ components1: URLComponents, equalTo components2: URLComponents) -> Bool {
+    var scratch1 = components1
+    var scratch2 = components2
+    
+    scratch1.queryItems = []
+    scratch2.queryItems = []
+    if scratch1 != scratch2 {
+        return false
+    }
+    
+    //Compare query items
+    if let queryItems1 = components1.queryItems,
+        let queryItmes2 = components2.queryItems {
+        if Set(queryItems1) != Set(queryItmes2) {
+            return false
+        }
+    }
+    return true
 }
