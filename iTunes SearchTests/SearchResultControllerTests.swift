@@ -30,7 +30,7 @@ class MockDataLoader: NetworkDataLoader {
 class SearchResultControllerTests: XCTestCase {
 
     func testValidData() {
-        let mock = MockDataLoader.init(data: nil, error: nil)
+        let mock = MockDataLoader(data: nil, error: nil)
     }
 
 }
