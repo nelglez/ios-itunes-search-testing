@@ -16,6 +16,7 @@
 		46BF02432117E01600A24DE5 /* ItunesSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF02422117E01600A24DE5 /* ItunesSearchTableViewController.swift */; };
 		46BF02452117E36400A24DE5 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF02442117E36400A24DE5 /* ResultType.swift */; };
 		46BF02472117E37000A24DE5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF02462117E36F00A24DE5 /* HTTPMethod.swift */; };
+		7A6B4DF1222D5FC1003AEC9B /* NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B4DF0222D5FC1003AEC9B /* NetworkDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		46BF02422117E01600A24DE5 /* ItunesSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchTableViewController.swift; sourceTree = "<group>"; };
 		46BF02442117E36400A24DE5 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		46BF02462117E36F00A24DE5 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		7A6B4DF0222D5FC1003AEC9B /* NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				46BF02402117DC5200A24DE5 /* SearchResultController.swift */,
+				7A6B4DF0222D5FC1003AEC9B /* NetworkDataLoader.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				46BF02472117E37000A24DE5 /* HTTPMethod.swift in Sources */,
 				46BF02432117E01600A24DE5 /* ItunesSearchTableViewController.swift in Sources */,
 				46BF023F2117D8FB00A24DE5 /* SearchResult.swift in Sources */,
+				7A6B4DF1222D5FC1003AEC9B /* NetworkDataLoader.swift in Sources */,
 				46BF022B2117D59500A24DE5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
