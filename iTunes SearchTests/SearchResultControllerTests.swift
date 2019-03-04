@@ -30,7 +30,21 @@ class MockDataLoader: NetworkDataLoader {
 class SearchResultControllerTests: XCTestCase {
 
     func testValidData() {
-        let mock = MockDataLoader(data: nil, error: nil)
+        let mock = MockDataLoader(data: garagebandJSON, error: nil)
+        let searchResultsController = SearchResultController(dataLoader: mock)
+        
+        searchResultsController.performSearch(for: "Garageband", resultType: .software) {
+            
+            XCTAssertNotNil(mock.request)
+            
+            let testComponents = URLComponents(url: URL(string: "https://itunes.apple.com/search?entity=software&term=Garageband")!, resolvingAgainstBaseURL: true)
+            let components = URLComponents(url: mock.request!.url!, resolvingAgainstBaseURL: true)
+            XCTAssertEqual(components, testComponents)
+            
+            XCTAssertEqual(searchResultsController.searchResults.count, 1)
+            let firstObject = searchResultsController.searchResults.first!
+            XCTAssertEqual(firstObject.title, "GarageBand")
+        }
     }
 
 }

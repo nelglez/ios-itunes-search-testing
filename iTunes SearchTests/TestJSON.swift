@@ -9,5 +9,11 @@
 import Foundation
 
 let garagebandJSON = """
+{
+"resultCount": 50,
+"results": [{
+"trackName": "GarageBand",
+"artistName": "Apple"}]
+}
 
 """.data(using: .utf8)!
