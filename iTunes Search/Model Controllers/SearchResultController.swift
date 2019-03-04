@@ -12,6 +12,12 @@ class SearchResultController {
     
     let baseURL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
+    private let dataLoader: NetworkDataLoader
+    
+    //Set the dataLoader constant
+    init(dataLoader: NetworkDataLoader = URLSession.shared){
+        self.dataLoader = dataLoader
+    }
     
     func performSearch(for searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         
