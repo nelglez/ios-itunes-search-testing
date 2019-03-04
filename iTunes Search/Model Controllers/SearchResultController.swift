@@ -33,8 +33,9 @@ class SearchResultController {
         request.httpMethod = HTTPMethod.get.rawValue
         
         //implicit dependency
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
-            
+      //  let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
+        dataLoader.loadData(using: request) { (data, error) in
+
             if let error = error { NSLog("Error fetching data: \(error)") }
             guard let data = data else { completion(); return }
             
@@ -48,7 +49,7 @@ class SearchResultController {
             
             completion()
         }
-        dataTask.resume()
+       
     }
   
 }

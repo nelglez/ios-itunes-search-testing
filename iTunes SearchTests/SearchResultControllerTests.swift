@@ -7,8 +7,19 @@
 //
 
 import XCTest
+@testable import iTunes_Search
+
+
+struct MockDataLoader: NetworkDataLoader {
+    func loadData(using request: URLRequest, completion: @escaping (Data?, Error?) -> Void) {
+        <#code#>
+    }
+}
 
 class SearchResultControllerTests: XCTestCase {
 
+    func testValidData() {
+        let mock =
+    }
 
 }
